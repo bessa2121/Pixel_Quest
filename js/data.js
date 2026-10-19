@@ -1,0 +1,16 @@
+const TT=[["Terras de Gaia","🌍"],["Reinos Míticos","🏛️"]];
+const CL=[["Guerreiro","⚔️","Espada: golpe em arco de curto alcance. +1 vida."],["Arqueiro","🏹","Arco: flechas rápidas de longo alcance."],["Mago","🔮","Cajado: orbe lento que explode e acerta vários inimigos."],["Ninja","🥷","Kunais: 3 lâminas em leque. Corre mais rápido."]];
+const R=[
+{n:"Floresta Verdejante",e:"🌲",bg:"#2f6b3a",bg2:"#2a5f34",dc:"#4f9a54",rk:"#5b4a36",sl:["#6fd45a","#3f9a35","#c6f7b8"],L:0,b:"Rei Musgo",bs:0,hp:6,bc:3,bv:.85,br:24,d:"Onde tudo começa. Os slimes são calmos… até o Rei Musgo acordar."},
+{n:"Pântano Sombrio",e:"🕸️",bg:"#44563a",bg2:"#3c4d33",dc:"#6b8a4e",rk:"#4a4036",sl:["#9acb4a","#5f8a26","#e2f5b0"],L:1,b:"Aranha Gigante",bs:1,hp:8,bc:2,bv:1,br:24,d:"Névoa e teias. Algo grande tece nas sombras."},
+{n:"Deserto de Âmbar",e:"🏜️",bg:"#d1b266",bg2:"#c5a65a",dc:"#a88540",rk:"#8a5a2b",sl:["#ef6a8f","#b83a62","#ffc2d4"],L:2,b:"Escorpião Gigante",bs:2,hp:9,bc:2.2,bv:.95,br:26,fl:1,d:"Dunas sem fim e um ferrão do tamanho de uma lança."},
+{n:"Cavernas de Cristal",e:"💎",bg:"#2b2f4a",bg2:"#262a43",dc:"#6e7bd0",rk:"#5a6290",sl:["#5ec8ee","#2a84ad","#c2efff"],L:3,b:"Golem de Cristal",bs:3,hp:12,bc:99,bv:.5,br:28,sm:1,d:"Cristais brilham no escuro e uma pedra viva guarda o caminho."},
+{n:"Picos Gelados",e:"🏔️",bg:"#cfe3ee",bg2:"#c3d9e6",dc:"#ffffff",rk:"#7a93a8",sl:["#b58cff","#7b52cc","#e3d2ff"],L:4,b:"Lobo Fenrir",bs:4,hp:11,bc:1.6,bv:1.2,br:26,fl:2,d:"O vento corta como lâmina. O lobo da lenda caça no topo."},
+{n:"Ruínas Gregas",e:"🏛️",bg:"#d8d2c0",bg2:"#cdc6b2",dc:"#a89f84",rk:"#8f8a7a",sl:["#e8d28a","#b89a3c","#fff4c8"],L:1,b:"Minotauro",bs:5,hp:14,bc:2.8,bv:.8,br:28,d:"Colunas partidas escondem um labirinto e quem vive nele."},
+{n:"Costa dos Abismos",e:"🌊",bg:"#2f6f8f",bg2:"#2a6482",dc:"#8fd3ee",rk:"#3f4f5a",sl:["#6fe0c8","#2f9e8a","#d0fff4"],L:2,b:"Kraken",bs:6,hp:15,bc:99,bv:.55,br:30,sh:1,kp:1,pc:"#9d4edd",d:"O mar ferve. Tentáculos cospem tinta lá do fundo."},
+{n:"Cemitério Esquecido",e:"🪦",bg:"#3a3445",bg2:"#342e3f",dc:"#6a5f80",rk:"#59546a",sl:["#c0c0d8","#7a7a99","#f0f0ff"],L:3,b:"Cérbero",bs:7,hp:16,bc:1.4,bv:1.1,br:28,d:"Três cabeças, uma só fome. O guardião dos mortos late."},
+{n:"Templo Dourado",e:"☀️",bg:"#e0b84a",bg2:"#d4aa3c",dc:"#fff2b0",rk:"#a67c1f",sl:["#ffd23f","#c99a10","#fff2a8"],L:4,b:"Grifo Dourado",bs:8,hp:16,bc:2,bv:1.1,br:28,sh:1,fl:1,pc:"#f4f1e8",d:"Metade águia, metade leão, dono do céu do templo."},
+{n:"Vulcão Rubro",e:"🌋",bg:"#4a1d1d",bg2:"#42191a",dc:"#ff5a1f",rk:"#2a2a2a",sl:["#ffb347","#d9731a","#ffe2b0"],L:0,b:"Dragão Rubro",bs:9,hp:20,bc:99,bv:.6,br:30,sh:1,kp:1,fl:2,pc:"#ff7a18",d:"O último mapa. O Dragão Rubro guarda o cristal que salva o mundo."}];
+R.forEach((r,i)=>Object.assign(r,{c:6+i,s:2+(i>>1),sp:48+i*4}));
+const Q=[["Derrotar 5 slimes","Qualquer",50,s=>s.kills,5],["Derrotar 30 slimes","Qualquer",120,s=>s.kills,30],["Coletar 30 moedas","Qualquer",60,s=>s.col,30],["Coletar 150 moedas","Qualquer",120,s=>s.col,150],...R.map((r,i)=>["Derrotar "+r.b,r.n,60+i*30,s=>+!!s.cl[i],1]),["Fase perfeita (sem dano)","Qualquer",150,s=>+s.pf,1],["Comprar um upgrade","Loja",50,s=>s.up.hp+s.up.sp+s.up.sw,1]];
+const UP=[["hp","❤ Coração extra","+1 vida máxima",80,60],["sp","👢 Botas ágeis","+12% velocidade",60,50],["sw","🎯 Arma afiada","+alcance do ataque",70,60]];

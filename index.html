@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Pixel Quest: aventura em pixel art com 2 territórios, 10 mapas, 10 chefes e 4 classes.">
+<title>Pixel Quest</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+</head><body>
+<header><div class="logo"><b>PQ</b>Pixel Quest</div>
+<nav id="nav"><button data-v="dash">Início</button><button data-v="mapa">Mapa</button><button data-v="jogar">Jogar</button><button data-v="miss">Missões</button><button data-v="skin">Herói</button></nav><span class="chip" id="chip"></span></header>
+<main>
+<section class="v" id="dash"></section>
+<section class="v" id="mapa"></section>
+<section class="v" id="jogar"><h1 id="gt">Jogar</h1><p class="mu" id="obj"></p>
+<div class="stage"><canvas id="cv" width="640" height="384"></canvas><div id="ov"></div></div>
+<div class="pad"><div class="dp"><span></span><button data-k="ArrowUp">▲</button><span></span><button data-k="ArrowLeft">◀</button><button data-k="ArrowDown">▼</button><button data-k="ArrowRight">▶</button></div><button data-k=" " class="pri" style="width:90px">⚔ Atacar</button></div>
+<p class="mu">Setas/WASD movem · Espaço usa a arma da classe · P pausa. Pegue ❤ para curar e 🧪 para correr mais.</p></section>
+<section class="v" id="miss"></section><section class="v" id="skin"></section>
+</main><div id="toast"></div>
+<script src="js/data.js"></script>
+<script src="js/state.js"></script>
+<script src="js/sprites.js"></script>
+<script src="js/map.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/game.js"></script>
+<script src="js/main.js"></script>
+</body></html>
